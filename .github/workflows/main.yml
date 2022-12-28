@@ -45,4 +45,4 @@ jobs:
       - name: Unzip the Pipeline Scanner
         run: unzip pipeline-scan-LATEST.zip
       - name: Run Pipeline Scanner
-        run: java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "${{secrets.VID}}" --veracode_api_key "${{secrets.VKEY}}" --file "verademo.war" --issue_details true || true
+        run: java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "${{secrets.VID}}" --veracode_api_key "${{secrets.VKEY}}" --file "**/*.war" --issue_details true || true
